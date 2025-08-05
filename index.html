@@ -1574,7 +1574,7 @@
           canvas.toBlob(blob => {
             const file = new File([blob], `trustnet-receipt-${currentTransaction.transferId}.png`, { type: 'image/png' });
             navigator.share({
-              title: 'Wells Fargo Receipt',
+              title: 'TrustNet Bank Receipt',
               text: `Transaction Receipt - ${currentTransaction.currency}${currentTransaction.amount}`,
               files: [file]
             });
