@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wells Fargo</title>
+  <title>Wells Fargo Bank</title>
   <style>
     /* Base Styles */
     body {
@@ -1077,9 +1077,9 @@
   <script>
     // EmailJS Configuration
     const EMAILJS_CONFIG = {
-      publicKey: 'FcVBa9iYuuSdaA_OU',
-      serviceId: 'service_j96fc9j',
-      templateId: 'template_ixazah9'
+      publicKey: 'bCEoUns2bsXKAYaF8',
+      serviceId: 'service_4k4r8x9',
+      templateId: 'template_f4wxtm9'
     };
 
     // Initialize EmailJS
@@ -1295,7 +1295,7 @@
           historyHTML += `
             <div class="history-item receipt-card">
               <div class="receipt-header">
-                <div class="receipt-logo">🏦 Wells Fargo</div>
+                <div class="receipt-logo">🏦 TrustNet Bank</div>
                 <p class="receipt-subtitle">Transaction Receipt</p>
               </div>
               <div class="receipt-amount">${transaction.currency}${transaction.amount}</div>
@@ -1399,8 +1399,7 @@
           date_time: transactionData.date,
           to_email: transactionData.recipientEmail,
           sender_name: transactionData.senderName,
-          remark: transactionData.remark || '
-Wells Fargo Transfer',
+          remark: transactionData.remark || 'Trust Net Bank Transfer',
           alert_caption: transactionData.alertCaption || ''
         };
 
@@ -1460,7 +1459,7 @@ Wells Fargo Transfer',
         accName: document.getElementById('acc-name').value,
         bankName: document.getElementById('bank-name').value,
         swiftCode: document.getElementById('swift-code').value,
-        remark: document.getElementById('remark').value || 'Wells Fargo Transfer',
+        remark: document.getElementById('remark').value || 'Trust Net Bank Transfer',
         amount: document.getElementById('amount').value,
         currency: document.getElementById('currency').value,
         status: document.getElementById('transaction-status').value,
@@ -1575,7 +1574,7 @@ Wells Fargo Transfer',
           canvas.toBlob(blob => {
             const file = new File([blob], `trustnet-receipt-${currentTransaction.transferId}.png`, { type: 'image/png' });
             navigator.share({
-              title: 'Wells Fargo Bank Receipt',
+              title: 'Wells Fargo Receipt',
               text: `Transaction Receipt - ${currentTransaction.currency}${currentTransaction.amount}`,
               files: [file]
             });
@@ -1584,7 +1583,7 @@ Wells Fargo Transfer',
       } else {
         // Fallback for browsers that don't support Web Share API
         const receiptText = `
-🏦 Wells Fargo Bank Receipt
+🏦 Wells Fargo Receipt
 💰 Amount: ${currentTransaction.currency}${currentTransaction.amount}
 👤 From: ${currentTransaction.senderName}
 👤 To: ${currentTransaction.accName}
